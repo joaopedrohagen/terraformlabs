@@ -6,7 +6,7 @@ resource "aws_subnet" "monitoramento_subnet_priv_1a" {
   tags = merge(
     local.tags,
     {
-      Name                     = "monitoramento-subnet-1a",
+      Name                     = "${var.project_name}-subnet-priv-1a",
       "kubernetes.io/role/elb" = 1
     }
   )
@@ -20,7 +20,7 @@ resource "aws_subnet" "monitoramento_subnet_priv_1b" {
   tags = merge(
     local.tags,
     {
-      Name                     = "monitoramento-subnet-1b",
+      Name                     = "${var.project_name}-subnet-priv-1b",
       "kubernetes.io/role/elb" = 1
     }
   )

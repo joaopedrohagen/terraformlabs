@@ -5,7 +5,7 @@ resource "aws_vpc" "monitoramento_vpc" {
   tags = merge(
     local.tags,
     {
-      Name = "monitoramento-vpc"
+      Name = "${var.project_name}-vpc"
     }
   )
 }
