@@ -2,7 +2,7 @@ resource "aws_eip" "monitoramento_ngw_eip_1a" {
   domain = "vpc"
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name = "${var.project_name}-eip-1a"
     }
@@ -13,7 +13,7 @@ resource "aws_eip" "monitoramento_ngw_eip_1b" {
   domain = "vpc"
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name = "${var.project_name}-eip-1b"
     }
@@ -25,7 +25,7 @@ resource "aws_nat_gateway" "monitoramento_ngw_1a" {
   subnet_id     = aws_subnet.monitoramento_subnet_public_1a.id
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name = "${var.project_name}-ngw-1a"
     }
@@ -37,7 +37,7 @@ resource "aws_nat_gateway" "monitoramento_ngw_1b" {
   subnet_id     = aws_subnet.monitoramento_subnet_public_1b.id
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name = "${var.project_name}-ngw-1b"
     }
@@ -53,7 +53,7 @@ resource "aws_route_table" "monitoramento_priv_rtb_1a" {
   }
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name = "${var.project_name}-priv-rtb-1a"
     }
@@ -69,7 +69,7 @@ resource "aws_route_table" "monitoramento_priv_rtb_1b" {
   }
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name = "${var.project_name}-priv-rtb-1b"
     }
